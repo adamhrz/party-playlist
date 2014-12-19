@@ -10,4 +10,14 @@
 
 @implementation PPSpotifyTrack
 
++ (NSDictionary *)rzi_customMappings
+{
+    return @{ @"id" : @"spotifyTrackId" };
+}
+
++ (NSArray *)rzi_nestedObjectKeys
+{
+    return @[ @"artists", @"album" ];
+}
+
 @end

@@ -43,9 +43,12 @@
     
     PPSpotifyDAO *spotifyDao = [PPSpotifyDAO new];
     
-    [spotifyDao getArtistsTopTracks:artistId completion:^(BOOL success, id result, NSError *error) {
+    [spotifyDao getPlaylist:@"57jIdOH4869OzaM0RW4tLz" forUser:@"126482211" completion:^(BOOL success, id result, NSError *error) {
         
     }];
+//    [spotifyDao getCurrentUsersSavedTracks:^(BOOL success, id result, NSError *error) {
+//        
+//    }];
 }
 
 @end

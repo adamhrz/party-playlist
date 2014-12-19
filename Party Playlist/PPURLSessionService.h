@@ -14,6 +14,8 @@ typedef void(^PPURLSessionFailureBlock)(NSURLSessionDataTask *task, NSError *err
 @interface PPURLSessionService : AFHTTPSessionManager
 
 + (PPURLSessionService *) sharedInstance;
-+ (NSURLSessionDataTask *) getTopTracksFromArtist:(NSString *)artistId success:(PPURLSessionSuccessBlock)success failure:(PPURLSessionFailureBlock)failure;
++ (NSURLSessionDataTask *)getTopTracksFromArtist:(NSString *)artistId success:(PPURLSessionSuccessBlock)success failure:(PPURLSessionFailureBlock)failure;
++ (NSURLSessionDataTask *)getCurrentUserSavedTracks:(PPURLSessionSuccessBlock)success failure:(PPURLSessionFailureBlock)failure;
++ (NSURLSessionDataTask *)getPlaylist:(NSString *)playlistId forUser:(NSString *) userId success:(PPURLSessionSuccessBlock)success failure:(PPURLSessionFailureBlock)failure;
 
 @end

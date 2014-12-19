@@ -13,5 +13,7 @@ typedef void(^PPSpotifyResponseBlock)(BOOL success, id result, NSError *error);
 @interface PPSpotifyDAO : NSObject
 
 - (void) getArtistsTopTracks:(NSString *)artistid completion:(PPSpotifyResponseBlock) completion;
+- (void)getCurrentUsersSavedTracks:(PPSpotifyResponseBlock) completion;
+- (void)getPlaylist:(NSString *) playlistId forUser:(NSString *) userId completion:(PPSpotifyResponseBlock)completion;
 
 @end

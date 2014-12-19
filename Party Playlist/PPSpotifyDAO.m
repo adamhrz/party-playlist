@@ -12,6 +12,7 @@
 
 #import "PPItem.h"
 #import "PPSpotifyTrack.h"
+#import "PPSpotifyPlaylist.h"
 
 #import "NSObject+RZImport.h"
 
@@ -47,6 +48,23 @@ static NSString *const kPPSpotifyCallbackUrl = @"";
         if ( completion ) {
             completion(NO, nil, error);
         }
+    }];
+}
+//126482211
+- (void)getPlaylist:(NSString *) playlistId forUser:(NSString *) userId completion:(PPSpotifyResponseBlock)completion
+{
+    [PPURLSessionService getPlaylist:playlistId forUser:userId success:^(NSURLSessionDataTask *task, id responseObject) {
+        PPSpotifyPlaylist *playlist = [PPSpotifyPlaylist rzi_objectFromDictionary:responseObject];
+        if ( completion )
+            completion(YES, playlist, nil);
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+    }];
+}
+- (void)getCurrentUsersSavedTracks:(PPSpotifyResponseBlock) completion{
+    [PPURLSessionService getCurrentUserSavedTracks:^(NSURLSessionDataTask *task, id responseObject) {
+        NSLog(@"%@",responseObject);
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        NSLog(@"%@",error);
     }];
 }
 
