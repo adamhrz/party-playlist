@@ -7,15 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		44931BB9BC231CEEA0D1C462 /* libPods-Party Playlist.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 15A4A2C069B45789AFEF2F58 /* libPods-Party Playlist.a */; };
 		BE4A82E51A44768200C3BB6C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BE4A82E41A44768200C3BB6C /* main.m */; };
 		BE4A82E81A44768200C3BB6C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BE4A82E71A44768200C3BB6C /* AppDelegate.m */; };
-		BE4A82EB1A44768200C3BB6C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE4A82EA1A44768200C3BB6C /* ViewController.m */; };
+		BE4A82EB1A44768200C3BB6C /* PPPlaylistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE4A82EA1A44768200C3BB6C /* PPPlaylistViewController.m */; };
 		BE4A82EE1A44768200C3BB6C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE4A82EC1A44768200C3BB6C /* Main.storyboard */; };
 		BE4A82F01A44768200C3BB6C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE4A82EF1A44768200C3BB6C /* Images.xcassets */; };
 		BE4A82F31A44768200C3BB6C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE4A82F11A44768200C3BB6C /* LaunchScreen.xib */; };
 		BE4A82FF1A44768200C3BB6C /* Party_PlaylistTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BE4A82FE1A44768200C3BB6C /* Party_PlaylistTests.m */; };
 		BE4A830F1A4478F800C3BB6C /* PPItem.m in Sources */ = {isa = PBXBuildFile; fileRef = BE4A830E1A4478F800C3BB6C /* PPItem.m */; };
 		BE4A83101A4478F800C3BB6C /* PPItem.m in Sources */ = {isa = PBXBuildFile; fileRef = BE4A830E1A4478F800C3BB6C /* PPItem.m */; };
+		C2EAB5A21A4485BC00AA05DC /* PPMediaPlayerHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EAB5A11A4485BC00AA05DC /* PPMediaPlayerHeaderView.m */; };
+		C2EAB5A51A4485D600AA05DC /* PPMediaPlayerHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2EAB5A41A4485D600AA05DC /* PPMediaPlayerHeaderView.xib */; };
+		C2EAB5A71A4487B200AA05DC /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2EAB5A61A4487B200AA05DC /* AVFoundation.framework */; };
+		C2EAB5A91A4487CC00AA05DC /* Spotify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2EAB5A81A4487CC00AA05DC /* Spotify.framework */; };
+		C2EAB5AC1A44889E00AA05DC /* PPSpotifyDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EAB5AB1A44889E00AA05DC /* PPSpotifyDAO.m */; };
+		C2EAB5AF1A44896300AA05DC /* PPURLSessionService.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EAB5AE1A44896300AA05DC /* PPURLSessionService.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,13 +36,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		15A4A2C069B45789AFEF2F58 /* libPods-Party Playlist.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Party Playlist.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AEA19BE77EAC62D2B509B75E /* Pods-Party Playlist.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Party Playlist.release.xcconfig"; path = "Pods/Target Support Files/Pods-Party Playlist/Pods-Party Playlist.release.xcconfig"; sourceTree = "<group>"; };
 		BE4A82DF1A44768200C3BB6C /* Party Playlist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Party Playlist.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE4A82E31A44768200C3BB6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE4A82E41A44768200C3BB6C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BE4A82E61A44768200C3BB6C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		BE4A82E71A44768200C3BB6C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		BE4A82E91A44768200C3BB6C /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		BE4A82EA1A44768200C3BB6C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		BE4A82E91A44768200C3BB6C /* PPPlaylistViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPPlaylistViewController.h; sourceTree = "<group>"; };
+		BE4A82EA1A44768200C3BB6C /* PPPlaylistViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPPlaylistViewController.m; sourceTree = "<group>"; };
 		BE4A82ED1A44768200C3BB6C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BE4A82EF1A44768200C3BB6C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		BE4A82F21A44768200C3BB6C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -44,6 +53,16 @@
 		BE4A82FE1A44768200C3BB6C /* Party_PlaylistTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Party_PlaylistTests.m; sourceTree = "<group>"; };
 		BE4A830D1A4478F800C3BB6C /* PPItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PPItem.h; path = Model/PPItem.h; sourceTree = "<group>"; };
 		BE4A830E1A4478F800C3BB6C /* PPItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PPItem.m; path = Model/PPItem.m; sourceTree = "<group>"; };
+		C2EAB5A01A4485BC00AA05DC /* PPMediaPlayerHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPMediaPlayerHeaderView.h; sourceTree = "<group>"; };
+		C2EAB5A11A4485BC00AA05DC /* PPMediaPlayerHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPMediaPlayerHeaderView.m; sourceTree = "<group>"; };
+		C2EAB5A41A4485D600AA05DC /* PPMediaPlayerHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PPMediaPlayerHeaderView.xib; sourceTree = "<group>"; };
+		C2EAB5A61A4487B200AA05DC /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		C2EAB5A81A4487CC00AA05DC /* Spotify.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Spotify.framework; sourceTree = "<group>"; };
+		C2EAB5AA1A44889E00AA05DC /* PPSpotifyDAO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPSpotifyDAO.h; sourceTree = "<group>"; };
+		C2EAB5AB1A44889E00AA05DC /* PPSpotifyDAO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPSpotifyDAO.m; sourceTree = "<group>"; };
+		C2EAB5AD1A44896300AA05DC /* PPURLSessionService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPURLSessionService.h; sourceTree = "<group>"; };
+		C2EAB5AE1A44896300AA05DC /* PPURLSessionService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPURLSessionService.m; sourceTree = "<group>"; };
+		FC3A4BDB10E92657F4E4F4D4 /* Pods-Party Playlist.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Party Playlist.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Party Playlist/Pods-Party Playlist.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +70,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2EAB5A91A4487CC00AA05DC /* Spotify.framework in Frameworks */,
+				C2EAB5A71A4487B200AA05DC /* AVFoundation.framework in Frameworks */,
+				44931BB9BC231CEEA0D1C462 /* libPods-Party Playlist.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,12 +86,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9B03D8D7E73707D680E76ADC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FC3A4BDB10E92657F4E4F4D4 /* Pods-Party Playlist.debug.xcconfig */,
+				AEA19BE77EAC62D2B509B75E /* Pods-Party Playlist.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		BE4A82D61A44768200C3BB6C = {
 			isa = PBXGroup;
 			children = (
 				BE4A82E11A44768200C3BB6C /* Party Playlist */,
 				BE4A82FB1A44768200C3BB6C /* Party PlaylistTests */,
 				BE4A82E01A44768200C3BB6C /* Products */,
+				9B03D8D7E73707D680E76ADC /* Pods */,
+				C0CCB289DC8DA56A57BA28D0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -85,11 +118,11 @@
 		BE4A82E11A44768200C3BB6C /* Party Playlist */ = {
 			isa = PBXGroup;
 			children = (
-				BE4A83081A44785500C3BB6C /* Model */,
 				BE4A82E61A44768200C3BB6C /* AppDelegate.h */,
 				BE4A82E71A44768200C3BB6C /* AppDelegate.m */,
-				BE4A82E91A44768200C3BB6C /* ViewController.h */,
-				BE4A82EA1A44768200C3BB6C /* ViewController.m */,
+				C2EAB59F1A44857E00AA05DC /* View */,
+				C2EAB59E1A44857600AA05DC /* ViewControllers */,
+				BE4A83081A44785500C3BB6C /* Model */,
 				BE4A82EC1A44768200C3BB6C /* Main.storyboard */,
 				BE4A82EF1A44768200C3BB6C /* Images.xcassets */,
 				BE4A82F11A44768200C3BB6C /* LaunchScreen.xib */,
@@ -129,8 +162,41 @@
 			children = (
 				BE4A830D1A4478F800C3BB6C /* PPItem.h */,
 				BE4A830E1A4478F800C3BB6C /* PPItem.m */,
+				C2EAB5AA1A44889E00AA05DC /* PPSpotifyDAO.h */,
+				C2EAB5AB1A44889E00AA05DC /* PPSpotifyDAO.m */,
+				C2EAB5AD1A44896300AA05DC /* PPURLSessionService.h */,
+				C2EAB5AE1A44896300AA05DC /* PPURLSessionService.m */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		C0CCB289DC8DA56A57BA28D0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C2EAB5A81A4487CC00AA05DC /* Spotify.framework */,
+				C2EAB5A61A4487B200AA05DC /* AVFoundation.framework */,
+				15A4A2C069B45789AFEF2F58 /* libPods-Party Playlist.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C2EAB59E1A44857600AA05DC /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				BE4A82E91A44768200C3BB6C /* PPPlaylistViewController.h */,
+				BE4A82EA1A44768200C3BB6C /* PPPlaylistViewController.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		C2EAB59F1A44857E00AA05DC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C2EAB5A01A4485BC00AA05DC /* PPMediaPlayerHeaderView.h */,
+				C2EAB5A11A4485BC00AA05DC /* PPMediaPlayerHeaderView.m */,
+				C2EAB5A41A4485D600AA05DC /* PPMediaPlayerHeaderView.xib */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,9 +206,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BE4A83021A44768200C3BB6C /* Build configuration list for PBXNativeTarget "Party Playlist" */;
 			buildPhases = (
+				C01880A3FE9C548936E56FE4 /* Check Pods Manifest.lock */,
 				BE4A82DB1A44768200C3BB6C /* Sources */,
 				BE4A82DC1A44768200C3BB6C /* Frameworks */,
 				BE4A82DD1A44768200C3BB6C /* Resources */,
+				9B94084651DDE2FEC52CA22B /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -214,6 +282,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE4A82EE1A44768200C3BB6C /* Main.storyboard in Resources */,
+				C2EAB5A51A4485D600AA05DC /* PPMediaPlayerHeaderView.xib in Resources */,
 				BE4A82F31A44768200C3BB6C /* LaunchScreen.xib in Resources */,
 				BE4A82F01A44768200C3BB6C /* Images.xcassets in Resources */,
 			);
@@ -228,15 +297,51 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		9B94084651DDE2FEC52CA22B /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Party Playlist/Pods-Party Playlist-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C01880A3FE9C548936E56FE4 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		BE4A82DB1A44768200C3BB6C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BE4A82EB1A44768200C3BB6C /* ViewController.m in Sources */,
+				BE4A82EB1A44768200C3BB6C /* PPPlaylistViewController.m in Sources */,
+				C2EAB5A21A4485BC00AA05DC /* PPMediaPlayerHeaderView.m in Sources */,
 				BE4A82E81A44768200C3BB6C /* AppDelegate.m in Sources */,
+				C2EAB5AC1A44889E00AA05DC /* PPSpotifyDAO.m in Sources */,
 				BE4A830F1A4478F800C3BB6C /* PPItem.m in Sources */,
 				BE4A82E51A44768200C3BB6C /* main.m in Sources */,
+				C2EAB5AF1A44896300AA05DC /* PPURLSessionService.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -316,6 +421,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -350,6 +456,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -357,8 +464,13 @@
 		};
 		BE4A83031A44768200C3BB6C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FC3A4BDB10E92657F4E4F4D4 /* Pods-Party Playlist.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "Party Playlist/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -367,8 +479,13 @@
 		};
 		BE4A83041A44768200C3BB6C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AEA19BE77EAC62D2B509B75E /* Pods-Party Playlist.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "Party Playlist/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";

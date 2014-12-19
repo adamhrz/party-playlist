@@ -2,7 +2,7 @@
 # platform :ios, '6.0'
 
 target 'Party Playlist' do
-
+       pod 'AFNetworking'
 end
 
 target 'Party PlaylistTests' do
