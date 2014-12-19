@@ -46,7 +46,7 @@
     
     PPSpotifyDAO *spotifyDao = [PPSpotifyDAO new];
     
-    [spotifyDao getPlaylist:@"57jIdOH4869OzaM0RW4tLz" forUser:@"126482211" completion:^(BOOL success, id result, NSError *error) {
+    [spotifyDao getPlaylist:@"1AmGw8xEuchjKdZKKUH0Ny" forUser:@"126482211" completion:^(BOOL success, id result, NSError *error) {
         PPSpotifyPlaylist *playlist = (PPSpotifyPlaylist *) result;
         NSLog(@"%@",playlist.artistNames);
         _weightedItems = [PPWeightedIndex rankItemsByCount:playlist.artistNames];
