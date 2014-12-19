@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "PPPlaylistModel.h"
 
 @interface AppDelegate ()
 
