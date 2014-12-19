@@ -8,6 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
+typedef void(^PPSpotifyResponseBlock)(BOOL success, id result, NSError *error);
+
 @interface PPSpotifyDAO : NSObject
+
+- (void) getArtistsTopTracks:(NSString *)artistid completion:(PPSpotifyResponseBlock) completion;
 
 @end

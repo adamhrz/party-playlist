@@ -12,6 +12,8 @@
 #import "PPTrack.h"
 #import "PPItem.h"
 
+#import "PPSpotifyDAO.h"
+
 @interface PPPlaylistViewController ()
 
 @end
@@ -22,7 +24,7 @@
     [super viewDidLoad];
     
     PPPlaylistModel *playlist = [PPPlaylistModel sharedInstance];
-    
+    NSString *artistId = @"5iKTnjAstcWhyW5CSyuogv";
     NSArray *tracks = @[
                         @{@"artist":@"Frank Sinatra",@"title":@"My Way"},
                         @{@"artist":@"Frank Sinatra",@"title":@"The First Noel"}
@@ -37,11 +39,13 @@
     }
     [playlist addTracks:playlistTracks];
     NSLog(@"Now playing: %@",[playlist nowPlaying]);
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
+    
+    PPSpotifyDAO *spotifyDao = [PPSpotifyDAO new];
+    
+    [spotifyDao getArtistsTopTracks:artistId completion:^(BOOL success, id result, NSError *error) {
+        
+    }];
 }
 
 @end

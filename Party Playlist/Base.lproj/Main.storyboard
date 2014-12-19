@@ -13,7 +13,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="3eb-u0-Y1b">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="asdf" id="3eb-u0-Y1b">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3eb-u0-Y1b" id="5zN-02-gsU">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -42,12 +42,12 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="1QQ-0L-ALw" kind="relationship" relationship="rootViewController" id="3zq-p6-usk"/>
+                        <segue destination="1QQ-0L-ALw" kind="relationship" relationship="rootViewController" id="8ZD-4E-zRQ"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J0t-xX-vOz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="963" y="691"/>
+            <point key="canvasLocation" x="901" y="691"/>
         </scene>
     </scenes>
 </document>

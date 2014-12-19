@@ -22,6 +22,11 @@
     return s;
 }
 
-
++ (NSURLSessionDataTask *)getTopTracksFromArtist:(NSString *)artistId success:(PPURLSessionSuccessBlock)success failure:(PPURLSessionFailureBlock)failure
+{
+    PPURLSessionService *sessionService = [[self class] sharedInstance];
+    NSString *path = [NSString stringWithFormat:@"https://api.spotify.com/v1/artists/%@/top-tracks", artistId];
+    return [sessionService GET:path parameters:@{ @"country" : @"SE" } success:success failure:failure];
+}
 
 @end

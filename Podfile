@@ -3,6 +3,7 @@
 
 target 'Party Playlist' do
        pod 'AFNetworking'
+       pod 'RZImport'
 end
 
 target 'Party PlaylistTests' do
