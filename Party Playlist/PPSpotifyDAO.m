@@ -58,6 +58,9 @@ static NSString *const kPPSpotifyCallbackUrl = @"";
         if ( completion )
             completion(YES, playlist, nil);
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        if ( completion ) {
+            completion(NO, nil, error);
+        }
     }];
 }
 - (void)getCurrentUsersSavedTracks:(PPSpotifyResponseBlock) completion{

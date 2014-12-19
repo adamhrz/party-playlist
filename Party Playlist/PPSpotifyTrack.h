@@ -18,4 +18,5 @@
 @property (strong, nonatomic) NSArray *artists;
 @property (strong, nonatomic) PPAlbum *album;
 
+
 @end

@@ -24,8 +24,17 @@
 //+ (BOOL) rzi
 - (BOOL)rzi_shouldImportValue:(id)value forKey:(NSString *)key
 {
-    if ( [key isEqualToString:@"tracks"] ) {
+    if ( [key isEqualToString:@"items"] ) {
         _tracks = [PPSpotifyTrack rzi_objectsFromArray:[value valueForKey:@"track"]];
+        NSLog(@"%@",[value valueForKey:@"track"]);
+        _artistNames = [NSMutableArray new];
+        for (NSDictionary *dic in [value valueForKey:@"track"]) {
+            NSArray *artists = dic[@"artists"];
+            if ( artists.count > 0 ){
+                [_artistNames addObject:artists[0][@"name"] ];
+            }
+        }
+
         return NO;
     }
     return YES;

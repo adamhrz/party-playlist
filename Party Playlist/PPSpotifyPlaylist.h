@@ -13,5 +13,6 @@
 
 @property (strong, nonatomic) NSString *spotifyPlaylistId;
 @property (strong, nonatomic) NSArray *tracks;
+@property (strong, nonatomic) NSMutableArray *artistNames;
 
 @end

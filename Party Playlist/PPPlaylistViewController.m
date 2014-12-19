@@ -11,12 +11,15 @@
 #import "PPPlaylistModel.h"
 #import "PPTrack.h"
 #import "PPItem.h"
+#import "PPSpotifyPlaylist.h"
+#import "PPWeightedIndex.h"
 
 #import "PPSpotifyDAO.h"
 
 @interface PPPlaylistViewController ()
-
+@property (strong, nonatomic) NSArray *weightedItems;
 @end
+
 
 @implementation PPPlaylistViewController
 
@@ -44,7 +47,9 @@
     PPSpotifyDAO *spotifyDao = [PPSpotifyDAO new];
     
     [spotifyDao getPlaylist:@"57jIdOH4869OzaM0RW4tLz" forUser:@"126482211" completion:^(BOOL success, id result, NSError *error) {
-        
+        PPSpotifyPlaylist *playlist = (PPSpotifyPlaylist *) result;
+        NSLog(@"%@",playlist.artistNames);
+        _weightedItems = [PPWeightedIndex rankItemsByCount:playlist.artistNames];
     }];
 //    [spotifyDao getCurrentUsersSavedTracks:^(BOOL success, id result, NSError *error) {
 //        
