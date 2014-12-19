@@ -12,13 +12,12 @@
 
 @property (copy, nonatomic, readonly) NSString *name;
 
+- (instancetype)initWithName:(NSString *)name;
+
 @end
 
 @interface PPArtist : PPItem
 @end
 
 @interface PPGenre : PPItem
-@end
-
-@interface PPTrack : PPItem
 @end
