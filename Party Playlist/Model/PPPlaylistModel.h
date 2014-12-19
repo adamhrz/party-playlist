@@ -17,7 +17,6 @@
 
 + (instancetype)sharedInstance;
 
-- (id)initWithItems:(NSArray *)items;
 - (PPTrack *)nowPlaying;
 - (PPTrack *)trackAtIndex:(int)index;
 - (void)addTracks:(NSArray *)tracks;
