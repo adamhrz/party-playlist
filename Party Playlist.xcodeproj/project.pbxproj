@@ -14,6 +14,8 @@
 		BE4A82F01A44768200C3BB6C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE4A82EF1A44768200C3BB6C /* Images.xcassets */; };
 		BE4A82F31A44768200C3BB6C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE4A82F11A44768200C3BB6C /* LaunchScreen.xib */; };
 		BE4A82FF1A44768200C3BB6C /* Party_PlaylistTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BE4A82FE1A44768200C3BB6C /* Party_PlaylistTests.m */; };
+		BE4A830F1A4478F800C3BB6C /* PPItem.m in Sources */ = {isa = PBXBuildFile; fileRef = BE4A830E1A4478F800C3BB6C /* PPItem.m */; };
+		BE4A83101A4478F800C3BB6C /* PPItem.m in Sources */ = {isa = PBXBuildFile; fileRef = BE4A830E1A4478F800C3BB6C /* PPItem.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,8 @@
 		BE4A82F81A44768200C3BB6C /* Party PlaylistTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Party PlaylistTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE4A82FD1A44768200C3BB6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE4A82FE1A44768200C3BB6C /* Party_PlaylistTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Party_PlaylistTests.m; sourceTree = "<group>"; };
+		BE4A830D1A4478F800C3BB6C /* PPItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PPItem.h; path = Model/PPItem.h; sourceTree = "<group>"; };
+		BE4A830E1A4478F800C3BB6C /* PPItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PPItem.m; path = Model/PPItem.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +85,7 @@
 		BE4A82E11A44768200C3BB6C /* Party Playlist */ = {
 			isa = PBXGroup;
 			children = (
+				BE4A83081A44785500C3BB6C /* Model */,
 				BE4A82E61A44768200C3BB6C /* AppDelegate.h */,
 				BE4A82E71A44768200C3BB6C /* AppDelegate.m */,
 				BE4A82E91A44768200C3BB6C /* ViewController.h */,
@@ -117,6 +122,15 @@
 				BE4A82FD1A44768200C3BB6C /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BE4A83081A44785500C3BB6C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BE4A830D1A4478F800C3BB6C /* PPItem.h */,
+				BE4A830E1A4478F800C3BB6C /* PPItem.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -221,6 +235,7 @@
 			files = (
 				BE4A82EB1A44768200C3BB6C /* ViewController.m in Sources */,
 				BE4A82E81A44768200C3BB6C /* AppDelegate.m in Sources */,
+				BE4A830F1A4478F800C3BB6C /* PPItem.m in Sources */,
 				BE4A82E51A44768200C3BB6C /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -229,6 +244,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE4A83101A4478F800C3BB6C /* PPItem.m in Sources */,
 				BE4A82FF1A44768200C3BB6C /* Party_PlaylistTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -412,6 +428,7 @@
 				BE4A83041A44768200C3BB6C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BE4A83051A44768200C3BB6C /* Build configuration list for PBXNativeTarget "Party PlaylistTests" */ = {
 			isa = XCConfigurationList;
@@ -420,6 +437,7 @@
 				BE4A83071A44768200C3BB6C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
