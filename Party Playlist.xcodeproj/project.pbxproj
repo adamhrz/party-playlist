@@ -22,6 +22,12 @@
 		BE6A6D9B1A44AD000022948B /* PPWeightedIndex.m in Sources */ = {isa = PBXBuildFile; fileRef = BE6A6D991A44AD000022948B /* PPWeightedIndex.m */; };
 		C27E856F1A44984D004B69F5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE4A82EC1A44768200C3BB6C /* Main.storyboard */; };
 		C27E85701A4498ED004B69F5 /* PPPlaylistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE4A82EA1A44768200C3BB6C /* PPPlaylistViewController.m */; };
+		C2A4FEA21A44BB4F00326BB6 /* PPSpotifyPlaylist.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A4FEA11A44BB4F00326BB6 /* PPSpotifyPlaylist.m */; };
+		C2C445051A44AD8900EA5829 /* PPSpotifyArtist.m in Sources */ = {isa = PBXBuildFile; fileRef = C2C445041A44AD8900EA5829 /* PPSpotifyArtist.m */; };
+		C2C445091A44AEA400EA5829 /* PPSpotifyAlbum.m in Sources */ = {isa = PBXBuildFile; fileRef = C2C445081A44AEA400EA5829 /* PPSpotifyAlbum.m */; };
+		C2C4450C1A44AF1E00EA5829 /* PPAlbum.m in Sources */ = {isa = PBXBuildFile; fileRef = C2C4450B1A44AF1E00EA5829 /* PPAlbum.m */; };
+		C2EAB5A21A4485BC00AA05DC /* PPMediaPlayerHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EAB5A11A4485BC00AA05DC /* PPMediaPlayerHeaderView.m */; };
+		C2EAB5A51A4485D600AA05DC /* PPMediaPlayerHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2EAB5A41A4485D600AA05DC /* PPMediaPlayerHeaderView.xib */; };
 		C2EAB5A71A4487B200AA05DC /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2EAB5A61A4487B200AA05DC /* AVFoundation.framework */; };
 		C2EAB5A91A4487CC00AA05DC /* Spotify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2EAB5A81A4487CC00AA05DC /* Spotify.framework */; };
 		C2EAB5AC1A44889E00AA05DC /* PPSpotifyDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EAB5AB1A44889E00AA05DC /* PPSpotifyDAO.m */; };
@@ -63,6 +69,14 @@
 		BE4A83121A447D3B00C3BB6C /* PPTrack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PPTrack.m; path = Model/PPTrack.m; sourceTree = "<group>"; };
 		BE4A83151A4483AE00C3BB6C /* PPPlaylistModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PPPlaylistModel.h; path = Model/PPPlaylistModel.h; sourceTree = "<group>"; };
 		BE4A83161A4483AE00C3BB6C /* PPPlaylistModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PPPlaylistModel.m; path = Model/PPPlaylistModel.m; sourceTree = "<group>"; };
+		C2A4FEA01A44BB4F00326BB6 /* PPSpotifyPlaylist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPSpotifyPlaylist.h; sourceTree = "<group>"; };
+		C2A4FEA11A44BB4F00326BB6 /* PPSpotifyPlaylist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPSpotifyPlaylist.m; sourceTree = "<group>"; };
+		C2C445031A44AD8900EA5829 /* PPSpotifyArtist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPSpotifyArtist.h; sourceTree = "<group>"; };
+		C2C445041A44AD8900EA5829 /* PPSpotifyArtist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPSpotifyArtist.m; sourceTree = "<group>"; };
+		C2C445071A44AEA400EA5829 /* PPSpotifyAlbum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPSpotifyAlbum.h; sourceTree = "<group>"; };
+		C2C445081A44AEA400EA5829 /* PPSpotifyAlbum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPSpotifyAlbum.m; sourceTree = "<group>"; };
+		C2C4450A1A44AF1E00EA5829 /* PPAlbum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPAlbum.h; sourceTree = "<group>"; };
+		C2C4450B1A44AF1E00EA5829 /* PPAlbum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPAlbum.m; sourceTree = "<group>"; };
 		BE6A6D981A44AD000022948B /* PPWeightedIndex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PPWeightedIndex.h; path = Model/PPWeightedIndex.h; sourceTree = "<group>"; };
 		BE6A6D991A44AD000022948B /* PPWeightedIndex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PPWeightedIndex.m; path = Model/PPWeightedIndex.m; sourceTree = "<group>"; };
 		C2EAB5A61A4487B200AA05DC /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -174,6 +188,14 @@
 		BE4A83081A44785500C3BB6C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C2A4FE9F1A44BB3C00326BB6 /* Playlists */,
+				C2C445061A44AE9400EA5829 /* Albums */,
+				C2C445021A44AD7700EA5829 /* Artists */,
+				C2EAB5B01A4492D200AA05DC /* Tracks */,
+				BE4A83151A4483AE00C3BB6C /* PPPlaylistModel.h */,
+				BE4A83161A4483AE00C3BB6C /* PPPlaylistModel.m */,
+				BE6A6D981A44AD000022948B /* PPWeightedIndex.h */,
+				BE6A6D991A44AD000022948B /* PPWeightedIndex.m */,
 				BE4A830D1A4478F800C3BB6C /* PPItem.h */,
 				BE4A830E1A4478F800C3BB6C /* PPItem.m */,
 				BE4A83151A4483AE00C3BB6C /* PPPlaylistModel.h */,
@@ -198,6 +220,37 @@
 				15A4A2C069B45789AFEF2F58 /* libPods-Party Playlist.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C2A4FE9F1A44BB3C00326BB6 /* Playlists */ = {
+			isa = PBXGroup;
+			children = (
+				BE4A83151A4483AE00C3BB6C /* PPPlaylistModel.h */,
+				BE4A83161A4483AE00C3BB6C /* PPPlaylistModel.m */,
+				C2A4FEA01A44BB4F00326BB6 /* PPSpotifyPlaylist.h */,
+				C2A4FEA11A44BB4F00326BB6 /* PPSpotifyPlaylist.m */,
+			);
+			name = Playlists;
+			sourceTree = "<group>";
+		};
+		C2C445021A44AD7700EA5829 /* Artists */ = {
+			isa = PBXGroup;
+			children = (
+				C2C445031A44AD8900EA5829 /* PPSpotifyArtist.h */,
+				C2C445041A44AD8900EA5829 /* PPSpotifyArtist.m */,
+			);
+			name = Artists;
+			sourceTree = "<group>";
+		};
+		C2C445061A44AE9400EA5829 /* Albums */ = {
+			isa = PBXGroup;
+			children = (
+				C2C445071A44AEA400EA5829 /* PPSpotifyAlbum.h */,
+				C2C445081A44AEA400EA5829 /* PPSpotifyAlbum.m */,
+				C2C4450A1A44AF1E00EA5829 /* PPAlbum.h */,
+				C2C4450B1A44AF1E00EA5829 /* PPAlbum.m */,
+			);
+			name = Albums;
 			sourceTree = "<group>";
 		};
 		C2EAB59E1A44857600AA05DC /* ViewControllers */ = {
@@ -370,12 +423,16 @@
 				BE4A83171A4483AE00C3BB6C /* PPPlaylistModel.m in Sources */,
 				BE4A82E81A44768200C3BB6C /* AppDelegate.m in Sources */,
 				C2EAB5AC1A44889E00AA05DC /* PPSpotifyDAO.m in Sources */,
+				C2C4450C1A44AF1E00EA5829 /* PPAlbum.m in Sources */,
 				BE4A830F1A4478F800C3BB6C /* PPItem.m in Sources */,
 				C2F7BC921A47048600AFE0C0 /* PPSpotifyLoginViewController.m in Sources */,
+				C2C445091A44AEA400EA5829 /* PPSpotifyAlbum.m in Sources */,
 				BE4A82E51A44768200C3BB6C /* main.m in Sources */,
 				C2EAB5AF1A44896300AA05DC /* PPURLSessionService.m in Sources */,
+				C2C445051A44AD8900EA5829 /* PPSpotifyArtist.m in Sources */,
 				C2EAB5B31A4492E300AA05DC /* PPSpotifyTrack.m in Sources */,
 				C2F7BC9A1A47056E00AFE0C0 /* PPUser.m in Sources */,
+				C2A4FEA21A44BB4F00326BB6 /* PPSpotifyPlaylist.m in Sources */,
 				BE4A83131A447D3B00C3BB6C /* PPTrack.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

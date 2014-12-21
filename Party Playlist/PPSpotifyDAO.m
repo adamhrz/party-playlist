@@ -14,6 +14,7 @@
 
 #import "PPItem.h"
 #import "PPSpotifyTrack.h"
+#import "PPSpotifyPlaylist.h"
 
 #import "NSObject+RZImport.h"
 #import "RZDispatch.h"
@@ -108,6 +109,26 @@ static NSString *const kPPSpotifyTokenSwapUrl = @"https://party-playlist.herokua
                 }
             });
         });
+    }];
+}
+//126482211
+- (void)getPlaylist:(NSString *) playlistId forUser:(NSString *) userId completion:(PPSpotifyResponseBlock)completion
+{
+    [PPURLSessionService getPlaylist:playlistId forUser:userId success:^(NSURLSessionDataTask *task, id responseObject) {
+        PPSpotifyPlaylist *playlist = [PPSpotifyPlaylist rzi_objectFromDictionary:responseObject];
+        if ( completion )
+            completion(YES, playlist, nil);
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        if ( completion ) {
+            completion(NO, nil, error);
+        }
+    }];
+}
+- (void)getCurrentUsersSavedTracks:(PPSpotifyResponseBlock) completion{
+    [PPURLSessionService getCurrentUserSavedTracks:^(NSURLSessionDataTask *task, id responseObject) {
+        NSLog(@"%@",responseObject);
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        NSLog(@"%@",error);
     }];
 }
 
