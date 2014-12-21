@@ -7,9 +7,8 @@
 //
 
 #import "PPAlbum.h"
-#import "RZImportable.h"
 
-@interface PPSpotifyAlbum : PPAlbum<RZImportable>
+@interface PPSpotifyAlbum : PPAlbum
 
 @property (strong, nonatomic) NSString *spotifyAlbumId;
 

@@ -10,11 +10,22 @@
 
 typedef void(^kPPUserFetchCallback)(BOOL success, id responseObject, NSError *error);
 
+@class SPTSession;
 @interface PPUser : NSObject
 
 + (PPUser *)currentUser;
+
+// spotify quick and dirty session mgmt
++ (BOOL)hasSpotifySession;
++ (SPTSession *)savedSpotifySession;
++ (void)saveSpotifySession:(SPTSession *)session;
++ (void)deleteSpotifySession:(SPTSession *)session;
+
+// spotify auth
 - (void)loginToSpotify;
 - (void)handleSpotifyAuthenticated:(NSDictionary *)parameters callback:(kPPUserFetchCallback)callback;
+
+// spotify fetches
 - (NSArray *)getUsersSpotifyTracks:(kPPUserFetchCallback)callback;
 
 @end

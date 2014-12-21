@@ -20,6 +20,10 @@ NSString* const kPPUserAuthenticatedSegueIdentifier = @"kPPUserAuthenticatedSegu
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    if ( [PPUser hasSpotifySession] ) {
+        [self performSegueWithIdentifier:kPPUserAuthenticatedSegueIdentifier sender:nil];
+    }
 }
 
 - (IBAction)loginToSpotifyTapped:(id)sender {

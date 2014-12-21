@@ -9,12 +9,15 @@
 #import "PPItem.h"
 
 @interface PPItem ()
+
 @property (copy, nonatomic) NSString *name;
+@property (copy, nonatomic) NSString *identifier;
+
 @end
 
 @implementation PPItem
 
-- (instancetype)initWithName:(NSString *)name
+- (instancetype)initWithIdentifier:(NSString *) identifier name:(NSString *)name
 {
     self = [super init];
     if ( self ) {
@@ -26,8 +29,5 @@
 @end
 
 @implementation PPGenre
-@end
-
-@implementation PPArtist
 @end
 

@@ -1,5 +1,0 @@
-#include "Pods-Party Playlist-AFNetworking.xcconfig"
-GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Build" "${PODS_ROOT}/Headers/Build/AFNetworking" "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/AFNetworking" "${PODS_ROOT}/Headers/Public/JLRoutes" "${PODS_ROOT}/Headers/Public/RZImport" "${PODS_ROOT}/Headers/Public/RZUtils"
-OTHER_LDFLAGS = ${PODS_PARTY_PLAYLIST_AFNETWORKING_OTHER_LDFLAGS} -ObjC
-PODS_ROOT = ${SRCROOT}

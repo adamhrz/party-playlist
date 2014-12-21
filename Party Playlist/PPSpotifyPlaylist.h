@@ -7,7 +7,6 @@
 //
 
 #import "PPPlaylistModel.h"
-#import "NSObject+RZImport.h"
 
 @interface PPSpotifyPlaylist : PPPlaylistModel
 

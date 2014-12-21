@@ -12,11 +12,8 @@
 
 @property (copy, nonatomic, readonly) NSString *name;
 
-- (instancetype)initWithName:(NSString *)name;
+- (instancetype)initWithIdentifier:(NSString *) identifier name:(NSString *)name;
 
-@end
-
-@interface PPArtist : PPItem
 @end
 
 @interface PPGenre : PPItem

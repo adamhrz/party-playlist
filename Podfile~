@@ -4,6 +4,7 @@
 target 'Party Playlist' do
 
        ## External
+       pod 'AFNetworking'
        pod 'JLRoutes'
 
        ## RZ

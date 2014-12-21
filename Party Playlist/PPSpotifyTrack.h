@@ -7,10 +7,9 @@
 //
 
 #import "PPTrack.h"
-#import "NSObject+RZImport.h"
 
 @class PPAlbum;
-@interface PPSpotifyTrack : PPTrack<RZImportable>
+@interface PPSpotifyTrack : PPTrack
 
 @property (strong, nonatomic) NSString *spotifyTrackId;
 @property (strong, nonatomic) NSString *href;

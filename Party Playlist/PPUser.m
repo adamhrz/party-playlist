@@ -11,8 +11,11 @@
 #import "PPUser.h"
 #import "PPSpotifyDAO.h"
 
-
 //typedef BOOL (BOOL (^)(NSDictionary *parameters)) ;
+static NSString* const kPPSpotifySessionUsernameKey = @"kPPSpotifySessionUsernameKey";
+static NSString* const kPPSpotifySessionAccessTokenKey = @"kPPSpotifySessionAccessTokenKey";
+static NSString* const kPPSpotifySessionExpirationDateKey = @"kPPSpotifySessionExpirationDateKey";
+//static NSString* const kPPSpotifySessionKey = @"kPPSpotifySessionUsernameKey";
 
 @interface PPUser ()
 
@@ -22,27 +25,6 @@
 @end
 
 @implementation PPUser
-
-- (void)commonInit
-{
-    _tracks = @[];
-    _spotifyDAO = [[PPSpotifyDAO alloc] init];
-}
-- (id) init
-{
-    if ( self  = [super init] ) {
-        [self commonInit];
-    }
-    return self;
-}
-
-- (instancetype)initPrivate
-{
-    if ( self = [self init] ) {
-        [self commonInit];
-    }
-    return self;
-}
 
 + (PPUser *) currentUser
 {
@@ -55,6 +37,75 @@
     return currentUser;
 }
 
+// quick and dirty session persistance
+
++ (BOOL)hasSpotifySession
+{
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    NSString *username = [userDefaults objectForKey:kPPSpotifySessionUsernameKey];
+    NSString *accessToken = [userDefaults objectForKey:kPPSpotifySessionAccessTokenKey];
+    NSDate *expirationDate = [userDefaults objectForKey:kPPSpotifySessionExpirationDateKey];
+    return accessToken != nil;
+}
+
++ (SPTSession *)savedSpotifySession
+{
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    NSString *username = [userDefaults objectForKey:kPPSpotifySessionUsernameKey];
+    NSString *accessToken = [userDefaults objectForKey:kPPSpotifySessionAccessTokenKey];
+    NSDate *expirationDate = [userDefaults objectForKey:kPPSpotifySessionExpirationDateKey];
+    SPTSession *session = [[SPTSession alloc] initWithUserName:username accessToken:accessToken expirationDate:expirationDate];
+    return session;
+}
+
++ (void)saveSpotifySession:(SPTSession *)session
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:session.accessToken forKey:kPPSpotifySessionAccessTokenKey];
+    [defaults setObject:session.canonicalUsername forKey:kPPSpotifySessionUsernameKey];
+    [defaults setObject:session.expirationDate forKey:kPPSpotifySessionExpirationDateKey];
+    [defaults synchronize];
+}
+
++ (void)deleteSpotifySession:(SPTSession *)session
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults removeObjectForKey:kPPSpotifySessionAccessTokenKey];
+    [defaults removeObjectForKey:kPPSpotifySessionUsernameKey];
+    [defaults removeObjectForKey:kPPSpotifySessionExpirationDateKey];
+    [defaults synchronize];
+}
+
+#pragma mark - Init
+
+- (id)init
+{
+    if ( self  = [super init] ) {
+        [self commonInit];
+    }
+    return self;
+}
+
+- (id)initPrivate
+{
+    if ( self = [self init] ) {
+
+        if ( [[self class] hasSpotifySession] ) {
+            _spotifyDAO = [[PPSpotifyDAO alloc] initWithSession:[[self class] savedSpotifySession]];
+        }
+    }
+    return self;
+}
+
+- (void)commonInit
+{
+    _tracks = @[];
+    _spotifyDAO = [[PPSpotifyDAO alloc] init];
+}
+
+
+#pragma mark - Spotify Authentication
+
 - (void) loginToSpotify
 {
     [self.spotifyDAO loginToSpotify];
@@ -62,8 +113,16 @@
 
 - (void)handleSpotifyAuthenticated:(NSDictionary *)parameters callback:(kPPUserFetchCallback)callback
 {
-    [self.spotifyDAO handleSpotifyAuthenticated:parameters callback:callback];
+    [self.spotifyDAO handleSpotifyAuthenticated:parameters callback:^(BOOL success, id result, NSError *error) {
+        if ( success ) {
+            [[self class] saveSpotifySession:result];
+        }
+        
+        callback(success, nil, error);
+    }];
 }
+
+#pragma mark - Spotify Fetching
 
 - (NSArray *)getUsersSpotifyTracks:(kPPUserFetchCallback)callback
 {

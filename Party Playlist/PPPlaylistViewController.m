@@ -6,17 +6,21 @@
 //  Copyright (c) 2014 Raizlabs. All rights reserved.
 //
 
+#import <Spotify/Spotify.h>
+
 #import "PPPlaylistViewController.h"
 
-
 #import "PPUser.h"
-#import "PPPlaylistModel.h"
-#import "PPTrack.h"
 #import "PPItem.h"
+#import "PPTrack.h"
 #import "PPSpotifyPlaylist.h"
+#import "PPSpotifyArtist.h"
+#import "PPPlaylistModel.h"
 #import "PPWeightedIndex.h"
 
 #import "PPSpotifyDAO.h"
+
+static NSString* const kPPPlaylistCellIdentifier = @"kPPPlaylistCellIdentifier";
 
 @interface PPPlaylistViewController ()
 
@@ -28,38 +32,55 @@
 
 @implementation PPPlaylistViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     
+    // I hate those lines
+    self.tableView.tableFooterView = [UIView new];
+    
     [[PPUser currentUser] getUsersSpotifyTracks:^(BOOL success, id responseObject, NSError *error) {
+        self.tracks = responseObject;
         
+        // Ew this needs to be changed, but it works for now
+        NSMutableArray *artists = [[NSMutableArray alloc] init];
+        for ( SPTTrack *track in self.tracks ) {
+            for ( SPTArtist *artist in track.artists ) {
+                [artists addObject:[[PPSpotifyArtist alloc] initWithSPTArtist:artist]];
+            }
+        }
+        
+        _weightedItems = [PPWeightedIndex rankItemsByCount:[artists valueForKeyPath:@"name"]];
+        [self.tableView reloadData];
     }];
-    
-    PPPlaylistModel *playlist = [PPPlaylistModel sharedInstance];
-    NSString *artistId = @"5iKTnjAstcWhyW5CSyuogv";
-    NSArray *tracks = @[
-                        @{@"artist":@"Frank Sinatra",@"title":@"My Way"},
-                        @{@"artist":@"Frank Sinatra",@"title":@"The First Noel"}
-                        ];
-    
-    NSMutableArray *playlistTracks = [NSMutableArray array];
-    
-    for (NSDictionary *track in tracks) {
-        PPArtist *artist = [[PPArtist alloc] initWithName:track[@"artist"]];
-        PPTrack *currentTrack = [[PPTrack alloc] initWithArtist:artist andTitle:track[@"title"]];
-        [playlistTracks addObject:currentTrack];
+}
+
+#pragma mark - Tableview
+
+- (NSInteger) numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return self.weightedItems.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSInteger row = indexPath.row;
+    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:kPPPlaylistCellIdentifier];
+    NSDictionary *item = self.weightedItems[row];
+    NSString *artistName = @"Error";
+    NSNumber *weight = @0;
+    if ( item.allKeys.count > 0 ) {
+        artistName = item.allKeys[0];
+        weight = item[artistName];
     }
-    [playlist addTracks:playlistTracks];
-    NSLog(@"Now playing: %@",[playlist nowPlaying]);
-    
-    
-    PPSpotifyDAO *spotifyDao = [PPSpotifyDAO new];
-    
-//    [spotifyDao getPlaylist:@"1AmGw8xEuchjKdZKKUH0Ny" forUser:@"126482211" completion:^(BOOL success, id result, NSError *error) {
-//        PPSpotifyPlaylist *playlist = (PPSpotifyPlaylist *) result;
-//        NSLog(@"%@",playlist.artistNames);
-//        _weightedItems = [PPWeightedIndex rankItemsByCount:playlist.artistNames];
-//    }];
+    cell.textLabel.text = artistName;
+    cell.detailTextLabel.text = weight.stringValue;
+    return cell;
 }
 
 @end

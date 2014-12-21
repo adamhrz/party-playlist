@@ -7,10 +7,11 @@
 //
 
 #import "PPItem.h"
-#import "NSObject+RZImport.h"
+#import "PPArtist.h"
 
-@interface PPSpotifyArtist : PPArtist<RZImportable>
+@class SPTArtist;
+@interface PPSpotifyArtist : PPArtist
 
-@property (strong, nonatomic) NSString *spotifyArtistId;
+- (id) initWithSPTArtist:(SPTArtist *)artist;
 
 @end

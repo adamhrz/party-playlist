@@ -12,6 +12,7 @@ typedef void(^PPSpotifyResponseBlock)(BOOL success, id result, NSError *error);
 
 @interface PPSpotifyDAO : NSObject
 
+- (id)initWithSession:(SPTSession *)session;
 - (void)loginToSpotify;
 - (void)handleSpotifyAuthenticated:(NSDictionary *)parameters callback:(PPSpotifyResponseBlock)callback;
 - (void)getAllTracksForCurrentUser:(PPSpotifyResponseBlock)callback;

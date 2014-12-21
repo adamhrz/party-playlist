@@ -6,14 +6,17 @@
 //  Copyright (c) 2014 Raizlabs. All rights reserved.
 //
 
+#import <Spotify/Spotify.h>
 #import "PPSpotifyArtist.h"
-#import "NSObject+RZImport.h"
 
 @implementation PPSpotifyArtist
 
-+ (NSDictionary *) rzi_customMappings
+- (id) initWithSPTArtist:(SPTArtist *)artist
 {
-    return @{ @"id" : @"spotifyArtistId" };
+    if ( self = [super initWithIdentifier:artist.identifier name:artist.name] ) {
+        
+    }
+    return self;
 }
 
 @end

@@ -1,1 +1,0 @@
-PODS_PARTY_PLAYLIST_RZIMPORT_OTHER_LDFLAGS = -framework "Foundation"

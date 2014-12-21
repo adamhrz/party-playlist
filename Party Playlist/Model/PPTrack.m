@@ -8,6 +8,7 @@
 
 #import "PPTrack.h"
 #import "PPItem.h"
+#import "PPArtist.h"
 
 @interface PPTrack ()
 
