@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="UpH-al-BEu">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Playlist View Controller-->
@@ -42,12 +43,58 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="1QQ-0L-ALw" kind="relationship" relationship="rootViewController" id="8ZD-4E-zRQ"/>
+                        <segue destination="xX6-dw-4tW" kind="relationship" relationship="rootViewController" id="uUT-BY-IBw"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J0t-xX-vOz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="901" y="691"/>
+            <point key="canvasLocation" x="75" y="691"/>
+        </scene>
+        <!--Spotify Login View Controller-->
+        <scene sceneID="Vbm-aZ-f9C">
+            <objects>
+                <viewController id="xX6-dw-4tW" customClass="PPSpotifyLoginViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3as-5b-aHJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="VNQ-lJ-QFd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0d2-uH-6bM">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CEW-Pp-3Cr">
+                                <rect key="frame" x="82" y="285" width="437" height="30"/>
+                                <state key="normal" title="Login to Spotify">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="loginToSpotifyTapped:" destination="xX6-dw-4tW" eventType="touchUpInside" id="uCd-s8-qK0"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Party Playlist!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ws-tG-QeA">
+                                <rect key="frame" x="248" y="150" width="104" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="6ws-tG-QeA" secondAttribute="centerX" id="35I-tQ-WoA"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="CEW-Pp-3Cr" secondAttribute="trailing" constant="65" id="FMC-WD-qv3"/>
+                            <constraint firstItem="CEW-Pp-3Cr" firstAttribute="top" secondItem="6ws-tG-QeA" secondAttribute="bottom" constant="114" id="LtG-Sf-MXH"/>
+                            <constraint firstItem="CEW-Pp-3Cr" firstAttribute="leading" secondItem="0d2-uH-6bM" secondAttribute="leadingMargin" constant="66" id="kEc-Ge-iUL"/>
+                            <constraint firstItem="6ws-tG-QeA" firstAttribute="top" secondItem="3as-5b-aHJ" secondAttribute="bottom" constant="86" id="omD-Gv-uzJ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="DOh-N4-OLZ"/>
+                    <connections>
+                        <segue destination="1QQ-0L-ALw" kind="show" identifier="kPPUserAuthenticatedSegueIdentifier" id="YWL-3e-HIq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hdN-Ha-gyr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="913" y="691"/>
         </scene>
     </scenes>
 </document>

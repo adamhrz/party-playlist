@@ -7,6 +7,8 @@
 //
 
 #import <Spotify/Spotify.h>
+#import <JLRoutes.h>
+
 #import "PPSpotifyDAO.h"
 #import "PPURLSessionService.h"
 
@@ -14,40 +16,100 @@
 #import "PPSpotifyTrack.h"
 
 #import "NSObject+RZImport.h"
+#import "RZDispatch.h"
 
-static NSString *const kPPSpotifyClientId = @"2b8f2b6f3b8f4e93b51e91eb642db48b";
-static NSString *const kPPSpotifyClientSecret = @"87d5fa8eb9344cfda35a049c7d3a2046";
-static NSString *const kPPSpotifyCallbackUrl = @"";
-//static NSString const* kPPSpotifyTokenSwapServiceURL = @"";
+static NSString *const kPPSpotifyClientId = @"8d63b1aac37b447baa46076140ec16df";
+static NSString *const kPPSpotifyClientSecret = @"eb3f68ca5f3243c9a764c017ae99a9d9";
+static NSString *const kPPSpotifyCallbackUrl = @"partyplaylist://loggedIn";
+static NSString *const kPPSpotifyTokenSwapUrl = @"https://party-playlist.herokuapp.com/swap";
+
+@interface PPSpotifyDAO ()
+
+@property (strong, nonatomic) SPTSession *session;
+
+@end
 
 @implementation PPSpotifyDAO
 
-+ (NSURL *) loginUrl
++ (NSURL *)loginUrl
 {
-    return [[SPTAuth defaultInstance] loginURLForClientId:kPPSpotifyClientId declaredRedirectURL:[NSURL URLWithString:kPPSpotifyCallbackUrl]];
+    return [[SPTAuth defaultInstance] loginURLForClientId:kPPSpotifyClientId
+                                      declaredRedirectURL:[NSURL URLWithString:kPPSpotifyCallbackUrl]
+                                                   scopes:@[ SPTAuthUserReadPrivateScope, SPTAuthUserLibraryReadScope ]];
 }
 
-+ (NSDictionary *)rzi_customKeyMappings
+#pragma mark - Authentication
+
+- (void)loginToSpotify
 {
-    return @{
-             @"id" : @"spotifyTrackId"
-             };
+    UIApplication *application = [UIApplication sharedApplication];
+    [application performSelector:@selector(openURL:)
+                      withObject:[[self class] loginUrl]
+                      afterDelay:.1];
 }
 
-
-- (void) getArtistsTopTracks:(NSString *)artistid completion:(PPSpotifyResponseBlock) completion
+- (void)handleSpotifyAuthenticated:(NSDictionary *)parameters callback:(PPSpotifyResponseBlock)callback
 {
-    [PPURLSessionService getTopTracksFromArtist:artistid success:^(NSURLSessionDataTask *task, id responseObject) {
-        NSLog(@"%@",responseObject);
-        NSArray *topTracks = [PPSpotifyTrack rzi_objectsFromArray:responseObject[@"tracks"]];
-        if ( completion ) {
-            completion(YES, topTracks, nil);
-        }
-    } failure:^(NSURLSessionDataTask *task, NSError *error) {
-        if ( completion ) {
-            completion(NO, nil, error);
-        }
+    NSURL *url = parameters[kJLRouteURLKey];
+    
+    if ( [[SPTAuth defaultInstance] canHandleURL:url withDeclaredRedirectURL:[NSURL URLWithString:kPPSpotifyCallbackUrl]] ) {
+        [[SPTAuth defaultInstance] handleAuthCallbackWithTriggeredAuthURL:url
+                                            tokenSwapServiceEndpointAtURL:[NSURL URLWithString:kPPSpotifyTokenSwapUrl]
+                                                                 callback:^(NSError *error, SPTSession *session) {
+                                                                     if ( !error ) {
+                                                                         _session = session;
+                                                                     } else {
+                                                                         NSLog(@"%@",error);
+                                                                         [[[UIAlertView alloc] initWithTitle:@"Error" message:error.description delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles:nil] show];
+                                                                     }
+                                                                     if ( callback ) {
+                                                                         callback((error == nil), nil, error);
+                                                                     }
+                                                                 }];
+    }
+}
+
+#pragma mark - Fetches
+
+- (void)getAllTracksForCurrentUser:(PPSpotifyResponseBlock)callback
+{
+    [SPTRequest savedTracksForUserInSession:self.session callback:^(NSError *error, id object) {
+        __block SPTListPage *totalListPage = object;
+        NSUInteger totalListLength = totalListPage.totalListLength;
+        __block NSError *spotifyError = nil;
+        __block BOOL nextPageSet = NO;
+        
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+            while ( totalListPage.range.location+totalListPage.range.length < totalListLength ) {
+                nextPageSet = NO;
+                
+                [totalListPage requestNextPageWithSession:self.session callback:^(NSError *error, id object) {
+                    NSLog(@"%@",totalListPage);
+                    if (!error ) {
+                        totalListPage = [totalListPage pageByAppendingPage:object];
+                        nextPageSet = YES;
+                    } else {
+                        spotifyError = error;
+                    }
+                }];
+                
+                while ( !nextPageSet ) {
+                    sleep(.5);
+                    if ( spotifyError ){
+                        break;
+                    }
+                }
+            }
+            
+            rz_dispatch_main_reentrant(^{
+                
+                @synchronized(totalListPage){
+                    callback(spotifyError == nil, totalListPage, spotifyError);
+                }
+            });
+        });
     }];
 }
+
 
 @end

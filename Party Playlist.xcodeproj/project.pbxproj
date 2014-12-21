@@ -22,13 +22,13 @@
 		BE6A6D9B1A44AD000022948B /* PPWeightedIndex.m in Sources */ = {isa = PBXBuildFile; fileRef = BE6A6D991A44AD000022948B /* PPWeightedIndex.m */; };
 		C27E856F1A44984D004B69F5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE4A82EC1A44768200C3BB6C /* Main.storyboard */; };
 		C27E85701A4498ED004B69F5 /* PPPlaylistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE4A82EA1A44768200C3BB6C /* PPPlaylistViewController.m */; };
-		C2EAB5A21A4485BC00AA05DC /* PPMediaPlayerHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EAB5A11A4485BC00AA05DC /* PPMediaPlayerHeaderView.m */; };
-		C2EAB5A51A4485D600AA05DC /* PPMediaPlayerHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2EAB5A41A4485D600AA05DC /* PPMediaPlayerHeaderView.xib */; };
 		C2EAB5A71A4487B200AA05DC /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2EAB5A61A4487B200AA05DC /* AVFoundation.framework */; };
 		C2EAB5A91A4487CC00AA05DC /* Spotify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2EAB5A81A4487CC00AA05DC /* Spotify.framework */; };
 		C2EAB5AC1A44889E00AA05DC /* PPSpotifyDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EAB5AB1A44889E00AA05DC /* PPSpotifyDAO.m */; };
 		C2EAB5AF1A44896300AA05DC /* PPURLSessionService.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EAB5AE1A44896300AA05DC /* PPURLSessionService.m */; };
 		C2EAB5B31A4492E300AA05DC /* PPSpotifyTrack.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EAB5B21A4492E300AA05DC /* PPSpotifyTrack.m */; };
+		C2F7BC921A47048600AFE0C0 /* PPSpotifyLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2F7BC911A47048600AFE0C0 /* PPSpotifyLoginViewController.m */; };
+		C2F7BC9A1A47056E00AFE0C0 /* PPUser.m in Sources */ = {isa = PBXBuildFile; fileRef = C2F7BC991A47056E00AFE0C0 /* PPUser.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,9 +65,6 @@
 		BE4A83161A4483AE00C3BB6C /* PPPlaylistModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PPPlaylistModel.m; path = Model/PPPlaylistModel.m; sourceTree = "<group>"; };
 		BE6A6D981A44AD000022948B /* PPWeightedIndex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PPWeightedIndex.h; path = Model/PPWeightedIndex.h; sourceTree = "<group>"; };
 		BE6A6D991A44AD000022948B /* PPWeightedIndex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PPWeightedIndex.m; path = Model/PPWeightedIndex.m; sourceTree = "<group>"; };
-		C2EAB5A01A4485BC00AA05DC /* PPMediaPlayerHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPMediaPlayerHeaderView.h; sourceTree = "<group>"; };
-		C2EAB5A11A4485BC00AA05DC /* PPMediaPlayerHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPMediaPlayerHeaderView.m; sourceTree = "<group>"; };
-		C2EAB5A41A4485D600AA05DC /* PPMediaPlayerHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PPMediaPlayerHeaderView.xib; sourceTree = "<group>"; };
 		C2EAB5A61A4487B200AA05DC /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		C2EAB5A81A4487CC00AA05DC /* Spotify.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Spotify.framework; sourceTree = "<group>"; };
 		C2EAB5AA1A44889E00AA05DC /* PPSpotifyDAO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPSpotifyDAO.h; sourceTree = "<group>"; };
@@ -76,6 +73,10 @@
 		C2EAB5AE1A44896300AA05DC /* PPURLSessionService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPURLSessionService.m; sourceTree = "<group>"; };
 		C2EAB5B11A4492E300AA05DC /* PPSpotifyTrack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPSpotifyTrack.h; sourceTree = "<group>"; };
 		C2EAB5B21A4492E300AA05DC /* PPSpotifyTrack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPSpotifyTrack.m; sourceTree = "<group>"; };
+		C2F7BC901A47048600AFE0C0 /* PPSpotifyLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPSpotifyLoginViewController.h; sourceTree = "<group>"; };
+		C2F7BC911A47048600AFE0C0 /* PPSpotifyLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPSpotifyLoginViewController.m; sourceTree = "<group>"; };
+		C2F7BC981A47056E00AFE0C0 /* PPUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPUser.h; sourceTree = "<group>"; };
+		C2F7BC991A47056E00AFE0C0 /* PPUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPUser.m; sourceTree = "<group>"; };
 		FC3A4BDB10E92657F4E4F4D4 /* Pods-Party Playlist.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Party Playlist.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Party Playlist/Pods-Party Playlist.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -134,7 +135,6 @@
 			children = (
 				BE4A82E61A44768200C3BB6C /* AppDelegate.h */,
 				BE4A82E71A44768200C3BB6C /* AppDelegate.m */,
-				C2EAB59F1A44857E00AA05DC /* View */,
 				C2EAB59E1A44857600AA05DC /* ViewControllers */,
 				BE4A83081A44785500C3BB6C /* Model */,
 				BE4A82EC1A44768200C3BB6C /* Main.storyboard */,
@@ -174,17 +174,18 @@
 		BE4A83081A44785500C3BB6C /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				C2EAB5B01A4492D200AA05DC /* Tracks */,
-				BE4A83151A4483AE00C3BB6C /* PPPlaylistModel.h */,
-				BE4A83161A4483AE00C3BB6C /* PPPlaylistModel.m */,
-				BE6A6D981A44AD000022948B /* PPWeightedIndex.h */,
-				BE6A6D991A44AD000022948B /* PPWeightedIndex.m */,
 				BE4A830D1A4478F800C3BB6C /* PPItem.h */,
 				BE4A830E1A4478F800C3BB6C /* PPItem.m */,
+				BE4A83151A4483AE00C3BB6C /* PPPlaylistModel.h */,
+				BE4A83161A4483AE00C3BB6C /* PPPlaylistModel.m */,
 				C2EAB5AA1A44889E00AA05DC /* PPSpotifyDAO.h */,
 				C2EAB5AB1A44889E00AA05DC /* PPSpotifyDAO.m */,
 				C2EAB5AD1A44896300AA05DC /* PPURLSessionService.h */,
 				C2EAB5AE1A44896300AA05DC /* PPURLSessionService.m */,
+				BE6A6D981A44AD000022948B /* PPWeightedIndex.h */,
+				BE6A6D991A44AD000022948B /* PPWeightedIndex.m */,
+				C2EAB5B01A4492D200AA05DC /* Tracks */,
+				C2F7BC971A47055E00AFE0C0 /* User */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -204,18 +205,10 @@
 			children = (
 				BE4A82E91A44768200C3BB6C /* PPPlaylistViewController.h */,
 				BE4A82EA1A44768200C3BB6C /* PPPlaylistViewController.m */,
+				C2F7BC901A47048600AFE0C0 /* PPSpotifyLoginViewController.h */,
+				C2F7BC911A47048600AFE0C0 /* PPSpotifyLoginViewController.m */,
 			);
 			name = ViewControllers;
-			sourceTree = "<group>";
-		};
-		C2EAB59F1A44857E00AA05DC /* View */ = {
-			isa = PBXGroup;
-			children = (
-				C2EAB5A01A4485BC00AA05DC /* PPMediaPlayerHeaderView.h */,
-				C2EAB5A11A4485BC00AA05DC /* PPMediaPlayerHeaderView.m */,
-				C2EAB5A41A4485D600AA05DC /* PPMediaPlayerHeaderView.xib */,
-			);
-			name = View;
 			sourceTree = "<group>";
 		};
 		C2EAB5B01A4492D200AA05DC /* Tracks */ = {
@@ -227,6 +220,15 @@
 				C2EAB5B21A4492E300AA05DC /* PPSpotifyTrack.m */,
 			);
 			name = Tracks;
+			sourceTree = "<group>";
+		};
+		C2F7BC971A47055E00AFE0C0 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				C2F7BC981A47056E00AFE0C0 /* PPUser.h */,
+				C2F7BC991A47056E00AFE0C0 /* PPUser.m */,
+			);
+			name = User;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -312,7 +314,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C27E856F1A44984D004B69F5 /* Main.storyboard in Resources */,
-				C2EAB5A51A4485D600AA05DC /* PPMediaPlayerHeaderView.xib in Resources */,
 				BE4A82F01A44768200C3BB6C /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -366,14 +367,15 @@
 			files = (
 				C27E85701A4498ED004B69F5 /* PPPlaylistViewController.m in Sources */,
 				BE6A6D9A1A44AD000022948B /* PPWeightedIndex.m in Sources */,
-				C2EAB5A21A4485BC00AA05DC /* PPMediaPlayerHeaderView.m in Sources */,
 				BE4A83171A4483AE00C3BB6C /* PPPlaylistModel.m in Sources */,
 				BE4A82E81A44768200C3BB6C /* AppDelegate.m in Sources */,
 				C2EAB5AC1A44889E00AA05DC /* PPSpotifyDAO.m in Sources */,
 				BE4A830F1A4478F800C3BB6C /* PPItem.m in Sources */,
+				C2F7BC921A47048600AFE0C0 /* PPSpotifyLoginViewController.m in Sources */,
 				BE4A82E51A44768200C3BB6C /* main.m in Sources */,
 				C2EAB5AF1A44896300AA05DC /* PPURLSessionService.m in Sources */,
 				C2EAB5B31A4492E300AA05DC /* PPSpotifyTrack.m in Sources */,
+				C2F7BC9A1A47056E00AFE0C0 /* PPUser.m in Sources */,
 				BE4A83131A447D3B00C3BB6C /* PPTrack.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

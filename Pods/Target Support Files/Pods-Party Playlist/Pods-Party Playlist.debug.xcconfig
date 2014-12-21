@@ -1,6 +1,6 @@
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/AFNetworking" "${PODS_ROOT}/Headers/Public/RZImport"
-OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/AFNetworking" -isystem "${PODS_ROOT}/Headers/Public/RZImport"
-OTHER_LDFLAGS = -ObjC -l"Pods-Party Playlist-AFNetworking" -l"Pods-Party Playlist-RZImport" -framework "CoreGraphics" -framework "Foundation" -framework "MobileCoreServices" -framework "Security" -framework "SystemConfiguration"
+HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/AFNetworking" "${PODS_ROOT}/Headers/Public/JLRoutes" "${PODS_ROOT}/Headers/Public/RZImport" "${PODS_ROOT}/Headers/Public/RZUtils"
+OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/AFNetworking" -isystem "${PODS_ROOT}/Headers/Public/JLRoutes" -isystem "${PODS_ROOT}/Headers/Public/RZImport" -isystem "${PODS_ROOT}/Headers/Public/RZUtils"
+OTHER_LDFLAGS = -ObjC -l"Pods-Party Playlist-AFNetworking" -l"Pods-Party Playlist-JLRoutes" -l"Pods-Party Playlist-RZImport" -l"Pods-Party Playlist-RZUtils" -framework "CoreGraphics" -framework "CoreLocation" -framework "Foundation" -framework "MobileCoreServices" -framework "QuartzCore" -framework "Security" -framework "SystemConfiguration" -framework "UIKit"
 OTHER_LIBTOOLFLAGS = $(OTHER_LDFLAGS)
 PODS_ROOT = ${SRCROOT}/Pods

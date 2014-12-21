@@ -12,6 +12,8 @@ typedef void(^PPSpotifyResponseBlock)(BOOL success, id result, NSError *error);
 
 @interface PPSpotifyDAO : NSObject
 
-- (void) getArtistsTopTracks:(NSString *)artistid completion:(PPSpotifyResponseBlock) completion;
+- (void)loginToSpotify;
+- (void)handleSpotifyAuthenticated:(NSDictionary *)parameters callback:(PPSpotifyResponseBlock)callback;
+- (void)getAllTracksForCurrentUser:(PPSpotifyResponseBlock)callback;
 
 @end
